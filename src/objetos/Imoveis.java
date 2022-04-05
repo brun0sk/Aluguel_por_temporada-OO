@@ -2,13 +2,37 @@ package objetos;
 
 public class Imoveis {
 	
+	String cidade;
 	String endereco;
-	float valorDiaria;
+	double valorDiaria;
 	int numeroComodos;
-	String idImovel;
-	String descriçãoImóvel;
+	String cpfAnfi;
+	String descricaoImovel;
 	String reservasCadastradas[];
-	String categoriaImovel;
+	boolean categoriaImovel;	//se true apartamento se false casa
+	
+	public Imoveis(String cid, String end, double valor, int numero, String cpf, String descricao, boolean cat) {
+		cidade = cid;
+		endereco = end;
+		valorDiaria = valor;
+		numeroComodos = numero;
+		cpfAnfi = cpf;
+		descricaoImovel = descricao;
+		categoriaImovel = cat;
+		
+	}
+	
+	public Imoveis() {
+		
+	}
+	
+	public String getcidade() {
+		return cidade;
+	}
+	
+	public void setcidade(String cidade) {
+		this.cidade = cidade;
+	}
 	
 	public String getendereco() {
 		return endereco;
@@ -18,11 +42,11 @@ public class Imoveis {
 		this.endereco = endereco;
 	}
 	
-	public float getvalorDiaria() {
+	public double getvalorDiaria() {
 		return valorDiaria;
 	}
 	
-	public void setvalorDiaria(float valorDiaria) {
+	public void setvalorDiaria(double valorDiaria) {
 		this.valorDiaria = valorDiaria;
 	}
 	
@@ -34,20 +58,20 @@ public class Imoveis {
 		this.numeroComodos = numeroComodos;
 	}
 	
-	public String getidImovel() {
-		return idImovel;
+	public String getcpfAnf() {
+		return cpfAnfi;
 	}
 	
-	public void setidImovel(String idImovel) {
-		this.idImovel = idImovel;
+	public void setcpfAnf(String cpfAnfi) {
+		this.cpfAnfi = cpfAnfi;
 	}
 	
-	public void  getcategoriaDoImvel() {
-		
+	public boolean  getcategoriaDoImvel() {
+		return categoriaImovel;
 	}
 	
-	public void setcategoriaDoImovel() {
-		
+	public void setcategoriaDoImovel(boolean categoriaImovel) {
+		this.categoriaImovel = categoriaImovel;
 	}
 	
 	

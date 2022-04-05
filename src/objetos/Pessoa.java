@@ -3,17 +3,19 @@ package objetos;
 public abstract class Pessoa {
 	protected String nome;
 	protected String CPF;
-	protected int telefone;
+	protected String telefone;
+	protected char senha[];
 	
-	public Pessoa(String n, String c, int t) {
+	public Pessoa(String n, String c, String t, char[] s) {
 		nome = n;
 		CPF = c;
 		telefone = t;
+		senha = s;
 	}
 	public Pessoa() {
 		nome = "";
 		CPF = "";
-		telefone = 0;
+		telefone = "";
 	}
 	
 	public String getNome() {
@@ -32,12 +34,20 @@ public abstract class Pessoa {
 		this.CPF = CPF;
 	}
 	
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 	
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 		
+	}
+	
+	public char[] getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(char[] senha) {
+		this.senha = senha;
 	}
 }

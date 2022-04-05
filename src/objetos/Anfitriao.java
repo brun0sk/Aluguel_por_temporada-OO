@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 
 public class Anfitriao extends Pessoa {
+	
+	
+	Dados dados = new Dados();
 	static Scanner ler = new Scanner(System.in);
 	//atributos
 	String idAnfitrião;
@@ -17,10 +20,11 @@ public class Anfitriao extends Pessoa {
 	}
 	
 	
-	public Anfitriao(String n, String c, int t) {
+	public Anfitriao(String n, String c, String t, char[] s) {
 		nome = n;
 		CPF = c;
 		telefone = t;
+		senha = s;
 		
 	}
 	
@@ -48,6 +52,14 @@ public class Anfitriao extends Pessoa {
 			}	
 		}while(true);
 		
+	}
+	
+	public void cadastraAnfitriao(String nom, String c, String tele) {
+		this.setCPF(c);
+		this.setNome(nom);
+		this.setTelefone(tele);
+		
+		dados.adicionaAn(this);
 	}
 	
 	static void editar() {

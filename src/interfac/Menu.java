@@ -22,10 +22,12 @@ public class Menu {
 			 gbc.gridy = 0;
 			 jfrm.add(login, gbc);
 			 
-			 gbc.fill = GridBagConstraints.HORIZONTAL;
+			 
+			 JLabel branco = new JLabel(" ");
+			 gbc.fill = GridBagConstraints.VERTICAL;
 			 gbc.gridx = 1;
 			 gbc.gridy = 0;
-			 jfrm.add(cadastrar, gbc);
+			 jfrm.add(branco, gbc);
 			 
 			 jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			 jfrm.setVisible(true); 

@@ -4,12 +4,16 @@ import java.util.Scanner;
 
 public class Hospede extends Pessoa {
 	static Scanner ler = new Scanner(System.in);
+
 	
-	
-	public Hospede(String n, String c, int t) {
+	public Hospede(String n, String c, String t, char[] s) {
 		nome = n;
 		CPF = c;
 		telefone = t;
+		senha = s;
+	}
+	
+	public Hospede() {
 		
 	}
 	

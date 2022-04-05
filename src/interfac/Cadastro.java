@@ -3,22 +3,34 @@ package interfac;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import objetos.Dados;
+import objetos.Anfitriao;
+import objetos.Hospede;
 
-public class Cadastro {
+public class Cadastro extends JFrame implements ActionListener{
 
-		
+		Anfitriao anf = new Anfitriao();
+		Hospede hos = new Hospede();
+		Dados dados = new Dados(); 
 		JButton login = new JButton("Login");
 		JButton cadastrar = new JButton("Criar Conta Anfitrião");
 		JButton cadastrarH = new JButton("Criar Conta Hospede");
+		JTextField nome = new JTextField(30);
+		JTextField cpf = new JTextField(11);
+		JTextField telefone = new JTextField(11);
+		JPasswordField senha = new JPasswordField(30);
+		String name;
+		String c;
+		String tel;
+		char s[];
+		String sen;
 		
 			public void cadastro() {
 				 JFrame jfrm = new JFrame("Aluguel Por Temporada");
 				 jfrm.setLayout(new GridBagLayout());
 				 jfrm.setSize(900,500);			//tamanho jframe
 				 
-				 String name;
-				 String c;
-				 String tel;
+
 				 
 				 GridBagConstraints gbc = new GridBagConstraints();		//criando gridbag
 				 
@@ -29,12 +41,12 @@ public class Cadastro {
 				 gbc.gridy = 0;
 				 jfrm.add(label1, gbc);
 				 
-				 JTextField nome = new JTextField(30);
+				 
 				 gbc.fill = GridBagConstraints.HORIZONTAL;
 				 gbc.gridx = 0;
 				 gbc.gridy = 1;
 				 jfrm.add(nome, gbc);
-				 name = nome.getText();			//adiciona o nome a uma variavel
+				 
 				 
 				 //recebe CPF usuario
 				 JLabel label2 = new JLabel("CPF:"); 
@@ -44,12 +56,12 @@ public class Cadastro {
 				 jfrm.add(label2, gbc);
 			
 				 
-				 JTextField cpf = new JTextField(11);
+				 
 				 gbc.fill = GridBagConstraints.HORIZONTAL;
 				 gbc.gridx = 0;
 				 gbc.gridy = 3;
 				 jfrm.add(cpf, gbc);
-				 c = cpf.getText();
+				 
 				 
 				 //recebe telefone usuario
 				 JLabel label3 = new JLabel("Telefone:"); 
@@ -58,35 +70,108 @@ public class Cadastro {
 				 gbc.gridy = 4;
 				 jfrm.add(label3, gbc);
 				 
-				 JTextField telefone = new JTextField(11);
+				 
 				 gbc.fill = GridBagConstraints.HORIZONTAL;
 				 gbc.gridx = 0;
 				 gbc.gridy = 5;
 				 jfrm.add(telefone, gbc);
-				 tel = telefone.getText();
 				 
-				 //pula a linha
-				 JLabel label4 = new JLabel(" "); 
+				 JLabel label4 = new JLabel("Senha:"); 
 				 gbc.fill = GridBagConstraints.HORIZONTAL;
 				 gbc.gridx = 0;
 				 gbc.gridy = 6;
 				 jfrm.add(label4, gbc);
 				 
-				 //adiciona os botoes
+				 gbc.fill = GridBagConstraints.HORIZONTAL;
 				 gbc.gridx = 0;
 				 gbc.gridy = 7;
+				 jfrm.add(senha, gbc);
+				 
+				 //pula a linha
+				 JLabel label5 = new JLabel(" "); 
+				 gbc.fill = GridBagConstraints.HORIZONTAL;
+				 gbc.gridx = 0;
+				 gbc.gridy = 8;
+				 jfrm.add(label5, gbc);
+				 
+				 //adiciona os botoes
+				 gbc.gridx = 0;
+				 gbc.gridy = 9;
 				 jfrm.add(cadastrar, gbc);
 				 
 				 gbc.gridx = 0;
-				 gbc.gridy = 8;
+				 gbc.gridy = 10;
 				 jfrm.add(cadastrarH, gbc);
 				 
 				 
 				 jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				 
+				 cadastrar.addActionListener(this);
+				 cadastrarH.addActionListener(this);
 				 
 				 jfrm.setVisible(true); 
 				 
+			}
+			
+			public void actionPerformed(ActionEvent e) {
+				name = nome.getText();			//adiciona o nome a uma variavel
+				tel = telefone.getText();
+				c = cpf.getText();
+				s = senha.getPassword();
+				
+				
+				//se opcao selecionada for cadastrar anfitriao
+				if (e.getSource() == cadastrar) {
+					anf.setNome(name);
+					anf.setSenha(s);
+					
+					if (c.length()==11) {
+						anf.setCPF(c);
+						if (tel.length()<=11 && tel.length()>=10) {
+							anf.setTelefone(tel);
+							dados.adicionaAn(anf);
+							
+						}
+						else {
+							String mensagem2 = "telefone inválido";
+							JOptionPane.showMessageDialog(null, mensagem2);
+						}
+					}
+					else {
+						String mensagem = "CPF Inválido";
+						JOptionPane.showMessageDialog(null, mensagem);
+					}
+					
+					
+				}
+				
+				//se opcao selecionada for cadastrar hospede
+				if (e.getSource() == cadastrarH) {
+					
+					hos.setNome(name);
+					hos.setSenha(s);
+						
+						if (c.length()==11) {
+							hos.setCPF(c);
+							
+							if (tel.length()<=11 && tel.length()>=10) {
+								hos.setTelefone(tel);
+								dados.adicionaHos(hos);
+								
+							}
+							else {
+								String mensagem2 = "telefone inválido";
+								JOptionPane.showMessageDialog(null, mensagem2);
+							}
+						}
+						else {
+							String mensagem = "CPF Inválido";
+							JOptionPane.showMessageDialog(null, mensagem);
+						}
+						
+					
+				}
+				
 			}
 			
 			
