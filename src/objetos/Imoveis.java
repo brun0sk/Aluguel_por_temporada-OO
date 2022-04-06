@@ -9,6 +9,7 @@ public class Imoveis {
 	String cpfAnfi;
 	String descricaoImovel;
 	String reservasCadastradas[];
+	int idImovel;
 	boolean categoriaImovel;	//se true apartamento se false casa
 	
 	public Imoveis(String cid, String end, double valor, int numero, String cpf, String descricao, boolean cat) {
@@ -20,6 +21,14 @@ public class Imoveis {
 		descricaoImovel = descricao;
 		categoriaImovel = cat;
 		
+	}
+	
+	public int getidImovel() {
+		return idImovel;
+	}
+	
+	public void setidImovel(int idImovel) {
+		this.idImovel = idImovel;
 	}
 	
 	public Imoveis() {
@@ -72,6 +81,14 @@ public class Imoveis {
 	
 	public void setcategoriaDoImovel(boolean categoriaImovel) {
 		this.categoriaImovel = categoriaImovel;
+	}
+	
+	public String getdescricaoImovel() {
+		return descricaoImovel;
+	}
+	
+	public void setdescricaoDoImovel(String descricaoImovel) {
+		this.descricaoImovel = descricaoImovel;
 	}
 	
 	

@@ -57,10 +57,12 @@ public class main {
 		imovel.setendereco("taguatinga centro");
 		imovel.setcpfAnf("08080808080");
 		imovel.setnumeroComodos(2);
-		imovel.setvalorDiaria(150.5);
+		imovel.setvalorDiaria(150.50);
+		imovel.setidImovel(1);
 		
 		
-		imov.cadastrarImovel();
+		cadastro.cadastro();
+		principal.menu();
 		System.out.print("digite 1 para cadastrar anfitrião");
 		int in = ler.nextInt();
 		if (in == 1) {

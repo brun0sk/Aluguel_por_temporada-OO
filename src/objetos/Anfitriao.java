@@ -54,13 +54,7 @@ public class Anfitriao extends Pessoa {
 		
 	}
 	
-	public void cadastraAnfitriao(String nom, String c, String tele) {
-		this.setCPF(c);
-		this.setNome(nom);
-		this.setTelefone(tele);
-		
-		dados.adicionaAn(this);
-	}
+
 	
 	static void editar() {
 		

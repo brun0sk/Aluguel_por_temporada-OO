@@ -29,6 +29,7 @@ public class CadastroImovel extends JFrame implements ActionListener{
 	char s[];
 	String sen;
 	String des;
+	int id;
 	
 	//diferencia casa e apartamento
 	boolean apartamento = true;
@@ -164,6 +165,7 @@ public class CadastroImovel extends JFrame implements ActionListener{
 		com = comodos.getText();
 		int co = Integer.parseInt(com);			//transforma entrada numero de comodos em int
 		s = senha.getPassword();
+		id = dados.criaId();
 		
 		
 		boolean tipo;		//define se o imovel e casa ou apartamento
@@ -182,6 +184,7 @@ public class CadastroImovel extends JFrame implements ActionListener{
 			imoveis.setnumeroComodos(co);
 			imoveis.setvalorDiaria(p);
 			imoveis.setendereco(en);
+			imoveis.setidImovel(id);
 		}
 		
 		if(e.getSource() == cadastrarAp && condi==true) {
@@ -192,7 +195,8 @@ public class CadastroImovel extends JFrame implements ActionListener{
 			imoveis.setnumeroComodos(co);
 			imoveis.setvalorDiaria(p);
 			imoveis.setendereco(en);
-			
+			imoveis.setidImovel(id);
+			System.out.print(imoveis);
 		}
 		
 	}
