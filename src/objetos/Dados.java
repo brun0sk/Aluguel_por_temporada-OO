@@ -22,6 +22,8 @@ public class Dados {
 	
 	static ArrayList<Imoveis> listaDeImoveisAlugados = new ArrayList<>();
 	
+	
+	
 
 	public void adicionaAn(Anfitriao a) {
 		listaDeAnfitriaos.add(a);
@@ -70,12 +72,19 @@ public class Dados {
 		return listaDescricao;
 	}
 	
-	public String titulo(JList <String> e) {
+	
+	//usado para criar o titulo dos anuncios
+	public void titulo(ArrayList<String> titul) {
+		
 		String resi;
 		String title;
-		String m = "";
+		String [] tit = new String[listaDeImoveis.size()];
+		int ide;
+		String identifica;
+		System.out.print(listaDeImoveis.size());
 		
 		for (int i = 0; i<listaDeImoveis.size(); i++) {
+			System.out.print("gaga");
 			
 			String cp = listaDeImoveis.get(i).getcidade();
 			boolean bo = listaDeImoveis.get(i).getcategoriaDoImvel();
@@ -89,16 +98,25 @@ public class Dados {
 			int como = listaDeImoveis.get(i).getnumeroComodos();
 			String num = Integer.toString(como);
 			
-			title = resi + " " + num + " Quartos " + cp;
+			ide = listaDeImoveis.get(i).getidImovel();
+			identifica = Integer.toString(ide);
 			
+			
+			title = ide + " " +resi + " " + num + " Quartos " + cp;
+			tit[i] = title;
+			
+			titul.add(title);
 		}
-		return m;
 		
 	}
 	
 	public int criaId() {
 		int id = listaDeImoveis.size();
 		return id;
+	}
+	
+	public ArrayList<Imoveis> arrayLis(){
+		return listaDeImoveis;
 	}
 	
 }

@@ -59,6 +59,7 @@ public class main {
 		imovel.setnumeroComodos(2);
 		imovel.setvalorDiaria(150.50);
 		imovel.setidImovel(1);
+		dados.adicionarImo(imovel);
 		
 		
 		cadastro.cadastro();
