@@ -56,7 +56,7 @@ public class Dados {
 		for (int i = 0; i<listaDeAnfitriaos.size(); i++) {
 			
 			if (cpf.equals(listaDeAnfitriaos.get(i).getCPF())) {
-				System.out.print("atumalaca");
+				System.out.print("atum");
 				return Arrays.equals(listaDeAnfitriaos.get(i).getSenha(),senha);
 
 			}
@@ -81,6 +81,8 @@ public class Dados {
 		String [] tit = new String[listaDeImoveis.size()];
 		int ide;
 		String identifica;
+		double preco;
+		String diaria;
 		System.out.print(listaDeImoveis.size());
 		
 		for (int i = 0; i<listaDeImoveis.size(); i++) {
@@ -101,8 +103,11 @@ public class Dados {
 			ide = listaDeImoveis.get(i).getidImovel();
 			identifica = Integer.toString(ide);
 			
+			preco = listaDeImoveis.get(i).getvalorDiaria();
+			diaria = Double.toString(preco);
 			
-			title = ide + " " +resi + " " + num + " Quartos " + cp;
+			
+			title = ide + " " +resi + " " + num + " Quartos " + cp + "      " + "R$" + diaria;
 			tit[i] = title;
 			
 			titul.add(title);
@@ -111,12 +116,33 @@ public class Dados {
 	}
 	
 	public int criaId() {
-		int id = listaDeImoveis.size();
+		int id = listaDeImoveis.size() +1;
 		return id;
+	}
+	
+	//usado para procurar elemento da lista por id
+	public ArrayList<Imoveis> procuraId(String idi) {
+		char id = idi.charAt(0);
+		System.out.print(id);
+		int ide = Character.getNumericValue(id);
+		ArrayList <Imoveis> lista = new ArrayList<>();
+		
+		for (int i = 0; i<listaDeImoveis.size(); i++) {
+			if (ide == listaDeImoveis.get(i).getidImovel()) {
+				lista.add(listaDeImoveis.get(i));
+				return lista;
+			}
+		}
+		return null;
+		
 	}
 	
 	public ArrayList<Imoveis> arrayLis(){
 		return listaDeImoveis;
+	}
+	
+	public void deletarIm() {
+		
 	}
 	
 }

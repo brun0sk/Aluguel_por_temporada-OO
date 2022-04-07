@@ -130,6 +130,8 @@ public class Cadastro extends JFrame implements ActionListener{
 						if (tel.length()<=11 && tel.length()>=10) {
 							anf.setTelefone(tel);
 							dados.adicionaAn(anf);
+							String mensagem2 = "Usuário cadastrado com sucesso";
+							JOptionPane.showMessageDialog(null, mensagem2);
 							
 						}
 						else {
@@ -157,6 +159,8 @@ public class Cadastro extends JFrame implements ActionListener{
 							if (tel.length()<=11 && tel.length()>=10) {
 								hos.setTelefone(tel);
 								dados.adicionaHos(hos);
+								String mensagem2 = "Usuário cadastrado com sucesso";
+								JOptionPane.showMessageDialog(null, mensagem2);
 								
 							}
 							else {

@@ -17,7 +17,7 @@ public class main {
 	static Hospede hospede = new Hospede();
 	static Hospede hospede2 = new Hospede();
 	static Imoveis imovel = new Imoveis();
-	
+	static Imoveis imovel2 = new Imoveis();
 	
 	static Cadastro cadastro = new Cadastro();
 	static Menu principal = new Menu();
@@ -61,9 +61,19 @@ public class main {
 		imovel.setidImovel(1);
 		dados.adicionarImo(imovel);
 		
+		imovel2.setcategoriaDoImovel(true);
+		imovel2.setcidade("Brasilia");
+		imovel2.setendereco("asa norte");
+		imovel2.setcpfAnf("02002002002");
+		imovel2.setnumeroComodos(2);
+		imovel2.setvalorDiaria(190.00);
+		imovel2.setidImovel(2);
+		dados.adicionarImo(imovel2);
+		
 		
 		cadastro.cadastro();
 		principal.menu();
+		imov.cadastrarImovel();
 		System.out.print("digite 1 para cadastrar anfitrião");
 		int in = ler.nextInt();
 		if (in == 1) {

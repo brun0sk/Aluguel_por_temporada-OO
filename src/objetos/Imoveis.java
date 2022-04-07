@@ -10,7 +10,7 @@ public class Imoveis {
 	String descricaoImovel;
 	String reservasCadastradas[];
 	int idImovel;
-	boolean categoriaImovel;	//se true apartamento se false casa
+	boolean categoriaImovel;	//se true apartamento, se false casa
 	
 	public Imoveis(String cid, String end, double valor, int numero, String cpf, String descricao, boolean cat) {
 		cidade = cid;

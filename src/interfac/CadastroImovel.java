@@ -10,6 +10,8 @@ import objetos.Imoveis;
 public class CadastroImovel extends JFrame implements ActionListener{
 	Anfitriao anf = new Anfitriao();
 	Dados dados = new Dados(); 
+	Menu cads = new Menu();
+	
 	Imoveis imoveis = new Imoveis();
 	JButton login = new JButton("Login");
 	JButton cadastrarCas = new JButton("Adicionar Casa");
@@ -185,6 +187,8 @@ public class CadastroImovel extends JFrame implements ActionListener{
 			imoveis.setvalorDiaria(p);
 			imoveis.setendereco(en);
 			imoveis.setidImovel(id);
+			dados.adicionarImo(imoveis);
+			cads.menu();
 		}
 		
 		if(e.getSource() == cadastrarAp && condi==true) {
@@ -197,6 +201,8 @@ public class CadastroImovel extends JFrame implements ActionListener{
 			imoveis.setendereco(en);
 			imoveis.setidImovel(id);
 			System.out.print(imoveis);
+			dados.adicionarImo(imoveis);
+			cads.menu();
 		}
 		
 	}
