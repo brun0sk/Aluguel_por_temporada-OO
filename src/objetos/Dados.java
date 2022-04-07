@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.*;
 
-
+//realisa CRUD dos objetos e trata os dados
 public class Dados {
 	
 	static Anfitriao anfitriao = new Anfitriao();
@@ -58,6 +58,20 @@ public class Dados {
 			if (cpf.equals(listaDeAnfitriaos.get(i).getCPF())) {
 				System.out.print("atum");
 				return Arrays.equals(listaDeAnfitriaos.get(i).getSenha(),senha);
+
+			}
+		}
+		return false;
+	}
+	
+	//utilizado para verificar login do hospede
+	public boolean verificaLogH(String cpf, char[] senha) {
+		System.out.print(listaDeHospedes.size());
+		for (int i = 0; i<listaDeHospedes.size(); i++) {
+			
+			if (cpf.equals(listaDeHospedes.get(i).getCPF())) {
+				System.out.print("atum");
+				return Arrays.equals(listaDeHospedes.get(i).getSenha(),senha);
 
 			}
 		}
@@ -134,6 +148,57 @@ public class Dados {
 			}
 		}
 		return null;
+		
+	}
+	
+	public void deletarImovel(String idi) {
+		char id = idi.charAt(0);
+		int ide = Character.getNumericValue(id);
+		
+		for (int i = 0; i<listaDeImoveis.size(); i++) {
+			if (ide == listaDeImoveis.get(i).getidImovel()) {
+				listaDeImoveis.remove(listaDeImoveis.get(i));
+				
+			}
+		}
+	}
+	
+	public void deletarAnfitriao(String cpf) {
+		
+		for(int i = 0; i<listaDeAnfitriaos.size(); i++) {
+			if (cpf.equals(listaDeAnfitriaos.get(i).getCPF())) {
+				listaDeAnfitriaos.remove(i);
+			}
+			
+			}
+		
+		
+		for (int i = 0; i<listaDeImoveis.size(); i++) {
+			if (cpf.equals(listaDeImoveis.get(i).getcpfAnf())) {
+				listaDeImoveis.remove(i);
+				
+			}
+		}
+		
+	}
+	
+	public void deletarHospede(String cpf) {
+		
+		for(int i = 0; i<listaDeHospedes.size(); i++) {
+			
+			if (cpf.equals(listaDeHospedes.get(i).getCPF())) {
+				listaDeHospedes.remove(i);
+			}
+			
+			}
+		
+		
+		for (int i = 0; i<listaDeImoveisAlugados.size(); i++) {
+			if (cpf.equals(listaDeImoveisAlugados.get(i).getcpfAnf())) {
+				listaDeImoveis.remove(i);
+				
+			}
+		}
 		
 	}
 	

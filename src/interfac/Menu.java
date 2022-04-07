@@ -10,7 +10,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 
-public class Menu {
+public class Menu extends JFrame implements ActionListener{
 	
 	JButton criar = new JButton("Criar conta");
 	JButton cadastrar = new JButton("Cadastrar novo imovel");
@@ -18,7 +18,9 @@ public class Menu {
 	JLabel label = new JLabel();
 	Dados dados = new Dados();
 	ScrollPane listaScroll = new ScrollPane();
-	
+	static CadastroImovel cada = new CadastroImovel();
+	static Cadastro cr = new Cadastro();
+	static Deletar del = new Deletar();
 	
 	
 	
@@ -58,6 +60,11 @@ public class Menu {
 					 JPanel panel3 = new JPanel();
 					 panel3.setLayout(new GridLayout(4,4));
 					 
+					 //panel que sera colocado selecionar dia
+					 JPanel panel4 = new JPanel();
+					 panel4.setLayout(new GridLayout(2,2));
+					 
+					 
 					 ArrayList <Imoveis> imov = new ArrayList<Imoveis>();
 					 String Selected = (String) list.getSelectedValue();
 					 label.setText(Selected);
@@ -77,11 +84,23 @@ public class Menu {
 					 panel3.add(end);
 					 
 					 
+					 JTextField data1= new JTextField();
+					 JTextField data2 = new JTextField();
+					 JLabel dt = new JLabel("Insira data de inicio mes/dia/ano:");
+					 JLabel dtf = new JLabel("Insira data final mes/dia/ano:");
+					 
+					 panel4.add(dt);
+					 panel4.add(data1);
+					 panel4.add(dtf);
+					 panel4.add(data2);
+					 
 					 JButton al = new JButton("Alugar Imovel");
 					 JButton del = new JButton("Deletar Imovel");
 					 
+					 panel3.add(panel4);
 					 panel3.add(al);
 					 panel3.add(del);
+					 
 
 					 
 					 split.setRightComponent(label);
@@ -98,8 +117,25 @@ public class Menu {
 			 
 
 			 jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			 jfrm.setVisible(true); 
 			 
+			 criar.addActionListener(this);
+			 cadastrar.addActionListener(this);
+			 deletar.addActionListener(this);
+			 
+			 jfrm.setVisible(true); 
+		 
+		}
+		
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == cadastrar) {
+				cada.cadastrarImovel();
+			}
+			if (e.getSource() == criar) {
+				cr.cadastro();
+			}
+			if (e.getSource() == deletar) {
+				del.deleta();
+			}
 		}
 		
 		 

@@ -71,9 +71,9 @@ public class main {
 		dados.adicionarImo(imovel2);
 		
 		
-		cadastro.cadastro();
+
 		principal.menu();
-		imov.cadastrarImovel();
+
 		System.out.print("digite 1 para cadastrar anfitrião");
 		int in = ler.nextInt();
 		if (in == 1) {
