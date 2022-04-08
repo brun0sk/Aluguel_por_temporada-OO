@@ -6,28 +6,23 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class Aluguel extends Data{
+	
+	boolean valorEst;	//valor total estadia
 
-	public Aluguel(int d, int m, int a) {
+	public Aluguel(int d, int m, int a, int df, int mf, int af, boolean v) {
 		dia = d;
 		mes = m;
 		ano = a;
+		diaf = df;
+		mesf = mf;
+		anof = af;
+		valorEst = v;
 	}
 	
 	public Aluguel() {
 		
 	}
 	
-	static void cadastrar(){
-		
-	}
-	
-	static void editar() {
-		
-	}
-	
-	static void deletar() {
-		
-	}
 	
 	//calcula valor a ser pago
 	public double calcular_Diaria(String d1, String d2, double valor) throws Exception{
@@ -59,10 +54,19 @@ public class Aluguel extends Data{
 	            return false;
 	        }
 		}
-
+	
+	public int[] stringData(String da) {
+		String [] reparte = da.split("/");
+		String le;
+		int [] d = new int [3];
+		for (int i = 0; i<reparte.length; i++) {
+			le = reparte[i];
+			d[i] = (Integer.parseInt(le));
+		}
+		return d;
+	}
 		
 	
-
 	
 	public boolean validaData(int d, int m, int a) {
 		if (d>31 || d<0) {

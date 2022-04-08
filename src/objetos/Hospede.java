@@ -56,12 +56,6 @@ public class Hospede extends Pessoa {
 		
 	}
 	
-	static void editar() {
-		
-	}
-	
-	static void deletar() {
-		
-	}
+
 	
 }

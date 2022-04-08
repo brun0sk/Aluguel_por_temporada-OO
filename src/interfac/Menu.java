@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import objetos.Imoveis;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
+import objetos.Aluguel;
 
 public class Menu extends JFrame implements ActionListener{
 	
@@ -21,6 +21,8 @@ public class Menu extends JFrame implements ActionListener{
 	static CadastroImovel cada = new CadastroImovel();
 	static Cadastro cr = new Cadastro();
 	static Deletar del = new Deletar();
+	static Alugar alu = new Alugar();
+	
 	
 	
 	
@@ -67,11 +69,15 @@ public class Menu extends JFrame implements ActionListener{
 					 
 					 ArrayList <Imoveis> imov = new ArrayList<Imoveis>();
 					 String Selected = (String) list.getSelectedValue();
+					 
+
 					 label.setText(Selected);
 	 
 					 
 					 imov = dados.procuraId(Selected);
 					 imov.get(0);
+					 
+					 alu.recebeD(imov);
 					 
 					 
 					 JLabel pr = new JLabel("Preço: " + imov.get(0).getvalorDiaria());
@@ -96,6 +102,36 @@ public class Menu extends JFrame implements ActionListener{
 					 
 					 JButton al = new JButton("Alugar Imovel");
 					 JButton del = new JButton("Deletar Imovel");
+					 
+					 //quando apertado deleta o imovel
+					 del.addActionListener(new ActionListener(){
+						 public void actionPerformed (ActionEvent event) {
+							 dados.deletarImovel(Selected);
+							 menu();
+							 jfrm.dispose();
+						 }
+					 });
+					 
+					 al.addActionListener(new ActionListener() {
+
+						public void actionPerformed(ActionEvent Event) {
+							String di;
+							String df;
+							String [] data = new String[2];
+							
+							di = data1.getText();
+							df = data2.getText();
+							
+							data[0] = di;
+							data[1] = df;
+							
+							alu.recebeData(data);
+							
+							alu.aluga();
+							jfrm.dispose();
+						}
+						
+					 });
 					 
 					 panel3.add(panel4);
 					 panel3.add(al);

@@ -11,6 +11,7 @@ public class Imoveis {
 	String reservasCadastradas[];
 	int idImovel;
 	boolean categoriaImovel;	//se true apartamento, se false casa
+
 	
 	public Imoveis(String cid, String end, double valor, int numero, String cpf, String descricao, boolean cat) {
 		cidade = cid;
@@ -92,16 +93,5 @@ public class Imoveis {
 	}
 	
 	
-	static void cadastrarImoveis(){
-		
-	}
-	
-	static void editar() {
-		
-	}
-	
-	static void deletar() {
-		
-	}
 	
 }

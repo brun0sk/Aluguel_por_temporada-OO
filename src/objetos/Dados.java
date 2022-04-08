@@ -14,14 +14,13 @@ public class Dados {
 	static Imoveis imovel = new Imoveis();
 
 	
-	static ArrayList<Anfitriao> listaDeAnfitriaos = new ArrayList<>();
+	static ArrayList<Anfitriao> listaDeAnfitriaos = new ArrayList<>();	//armazena anfitrioes
 	
-	static ArrayList<Hospede> listaDeHospedes = new ArrayList<>();
+	static ArrayList<Hospede> listaDeHospedes = new ArrayList<>();	//armazena hospedes
 	
-	static ArrayList<Imoveis> listaDeImoveis = new ArrayList<>();
+	static ArrayList<Imoveis> listaDeImoveis = new ArrayList<>();	//armazena imoveis
 	
-	static ArrayList<Imoveis> listaDeImoveisAlugados = new ArrayList<>();
-	
+	static ArrayList<Imoveis> listaDeImoveisAlugados = new ArrayList<>();	//armazena lista de reservas
 	
 	
 
@@ -77,15 +76,7 @@ public class Dados {
 		}
 		return false;
 	}
-	
-	public ArrayList<String> retornaDescricao() {
-		ArrayList <String> listaDescricao = new ArrayList<>();
-		for (int i = 0; i<listaDeImoveis.size(); i++) {
-			listaDescricao.add(listaDeImoveis.get(i).getdescricaoImovel());
-		}
-		return listaDescricao;
-	}
-	
+
 	
 	//usado para criar o titulo dos anuncios
 	public void titulo(ArrayList<String> titul) {
@@ -206,8 +197,6 @@ public class Dados {
 		return listaDeImoveis;
 	}
 	
-	public void deletarIm() {
-		
-	}
+	
 	
 }

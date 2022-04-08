@@ -45,4 +45,18 @@ public class Testes extends TestCase{
 			assertEquals(valorEsperado2, valorEncontrado2);
 
 	}
+	
+	public void testModifica() {		
+
+		String d = "02/02/2022";
+		
+		int[] valorEsperado = {2,2,2022};
+		int[] valorEncontrado = tstA.stringData(d);
+		
+		assertEquals(valorEsperado[1], valorEncontrado[1]);
+		assertEquals(valorEsperado[0], valorEncontrado[0]);
+		assertEquals(valorEsperado[2], valorEncontrado[2]);
+
+	}
+	
 }

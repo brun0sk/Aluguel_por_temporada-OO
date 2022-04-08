@@ -56,12 +56,4 @@ public class Anfitriao extends Pessoa {
 	
 
 	
-	static void editar() {
-		
-	}
-	
-	static void deletar() {
-		
-	}
-	
 }

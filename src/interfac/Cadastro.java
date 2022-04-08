@@ -162,6 +162,7 @@ public class Cadastro extends JFrame implements ActionListener{
 								String mensagem2 = "Usuário cadastrado com sucesso";
 								JOptionPane.showMessageDialog(null, mensagem2);
 								
+								
 							}
 							else {
 								String mensagem2 = "telefone inválido";
