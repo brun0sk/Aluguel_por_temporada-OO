@@ -1,2 +1,2 @@
 # Aluguel_por_temporada-OO
- Trabalho da turma de Orientação a Objeto Universidade de Brasilia 2022
+ Trabalho do Grupo T1.4, turma de Orientação a Objetos Universidade de Brasília 2021.2.
